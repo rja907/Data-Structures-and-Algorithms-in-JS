@@ -12,16 +12,16 @@
 
 class Stack {
   constructor() {
-    this.foo = [];
+    this.stack = [];
   }
   push(record) {
-    this.foo.push(record);
+    this.stack.push(record);
   }
   pop() {
-    return this.foo.pop();
+    return this.stack.pop();
   }
   peek() {
-    return this.foo[this.foo.length - 1];
+    return this.stack[this.stack.length - 1];
   }
 }
 
