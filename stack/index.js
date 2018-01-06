@@ -11,17 +11,17 @@
 //   s.pop(); // returns 1
 
 class Stack {
-  constructor(){
+  constructor() {
     this.foo = [];
   }
-  push(record){
+  push(record) {
     this.foo.push(record);
   }
-  pop(){
+  pop() {
     return this.foo.pop();
   }
-  peek(){
-    return this.foo[this.foo.length -1];
+  peek() {
+    return this.foo[this.foo.length - 1];
   }
 }
 
