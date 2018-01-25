@@ -88,9 +88,23 @@ class LinkedList {
   }
   //get the data of the kth node.
   getAt(kth){
+    let counter = 0;
+    let node = this.head;
+    while(node){
+      //finding if match exists.
+      if(counter === kth){
+        return node;
+      }
+      counter++;
+      node = node.next;
+    }
+    //kth greater than the length of the list.
+    return null;
+  }
+  //remove kth index node.
+  removeAt(kth){
 
   }
-
 }
 
 module.exports = { Node, LinkedList };
