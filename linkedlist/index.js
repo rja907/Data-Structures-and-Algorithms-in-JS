@@ -110,6 +110,28 @@ class LinkedList {
     if(!prev.next){ return;}
     prev.next = prev.next.next;
   }
+  // insertAt(data, kth){
+  //   if(!this.head){this.head = new Node(data, this.head);return;}
+  //   let temp = new Node(data);
+  //   if(kth===0){temp.next = this.head.next; temp = this.head; return;}
+  //   const prev = this.getAt(kth - 1);
+  //   temp.next = prev.next;
+  //   prev.next = temp;
+  //   return;
+  // }
+  insertAt(data, kth){
+    if(!this.head){
+      this.head = new Node(data);
+      return;
+    }
+    if(kth===0){
+      this.head = new Node(data, this.head);
+      return;
+    }
+    const prev = this.getAt(kth - 1) || this.getLast();
+    const node = new Node(data, prev.next);
+    prev.next = node;
+  }
 }
 
 module.exports = { Node, LinkedList };
