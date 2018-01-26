@@ -103,7 +103,12 @@ class LinkedList {
   }
   //remove kth index node.
   removeAt(kth){
-
+    if(!this.head){ return null;}
+    if(kth===0){ this.head = this.head.next; return;}
+    const prev = this.getAt(kth - 1);
+    if(!prev){ return;}
+    if(!prev.next){ return;}
+    prev.next = prev.next.next;
   }
 }
 
