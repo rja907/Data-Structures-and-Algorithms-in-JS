@@ -33,11 +33,27 @@ function selectionSort(arr) {
 }
 
 function mergeSort(arr) {
-
+  if(arr.length===1){
+    return arr;
+  }
+  const center = Math.floor(arr.length/2);
+  //slice -> everuthing from 0 to center but not including center.
+  const left = arr.slice(0, center);
+  //slice -> from center to the end of the array.
+  const right = arr.slice(center);
+  return merge(mergeSort(left), mergeSort(right));
 }
 
 function merge(left, right) {
-
+  const results = [];
+  while(left.length && right.length){
+    if(left[0] < right[0]){
+      results.push(left.shift());
+    } else {
+      results.push(right.shift());
+    }
+  }
+  return [...results, ...left, ...right];
 }
 
-module.exports = { bubbleSort, selectionSort, mergeSort };
+module.exports = { bubbleSort, selectionSort, mergeSort, merge };
