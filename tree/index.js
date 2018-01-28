@@ -37,7 +37,16 @@ class Tree {
       const node = arr.shift();
       arr.push(...node.children);
       console.log(fn(node));
-
+    }
+  }
+  traverseDF(fn){
+    const arr = [this.root];
+    while(arr.length){
+      //shift() takes out the first element of the array.
+      const node = arr.shift();
+      //unshift() adds element to the front of the array.
+      arr.unshift(...node.children);
+      console.log(fn(node));
     }
   }
 }
